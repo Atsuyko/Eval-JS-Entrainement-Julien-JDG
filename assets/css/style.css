@@ -1,0 +1,52 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.player {
+  font-size: 3em;
+  padding-top: 20%;
+}
+
+#new-game {
+  font-size: 2em;
+}
+
+.score {
+  font-size: 6em;
+}
+
+.round {
+  margin-top: 25%;
+  width: 20%;
+}
+
+#ROUND1,
+#ROUND2 {
+  font-size: 2em;
+}
+
+#dice {
+  margin-top: 16%;
+  width: 5%;
+  height: 10%;
+  margin-left: 47%;
+}
+
+.area {
+  width: 100%;
+  margin-left: 0%;
+  height: 100vw;
+}
+
+#div-roll {
+  font-size: 2em;
+  margin-top: 34%;
+  width: 100%;
+}
+
+#div-hold {
+  font-size: 2em;
+  margin-top: 36.5%;
+  width: 100%;
+
+}
