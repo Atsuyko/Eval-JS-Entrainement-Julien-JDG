@@ -11,6 +11,7 @@ $(document).ready(() => {
   const round2 = $('#ROUND2')
   const player1Turn = $('#player1Turn')
   const player2Turn = $('#player2Turn')
+  let GLOBAL = 0
   let ROUND = 0
   let player = 0
 
@@ -34,9 +35,11 @@ $(document).ready(() => {
   function turn() {
     if (player === 1) {
       round1.text('0')
+      GLOBAL = parseInt(global2.text())
       player2Play()
     } else if (player === 2) {
       round2.text('0')
+      GLOBAL = parseInt(global1.text())
       player1Play()
     }
   }
@@ -49,6 +52,7 @@ $(document).ready(() => {
     player1.css('color', 'black')
     player1Turn.css('display', 'inline')
     ROUND = 0
+    GLOBAL = 0
     player1Play()
   })
 
@@ -77,7 +81,16 @@ $(document).ready(() => {
     }
   })
 
-
+  hold.on('click', function () {
+    GLOBAL = GLOBAL + ROUND
+    if (player === 1) {
+      global1.text(GLOBAL)
+    } else if (player === 2) {
+      global2.text(GLOBAL)
+    }
+    ROUND = 0
+    turn()
+  })
 
 });
 
