@@ -54,43 +54,61 @@ $(document).ready(() => {
     ROUND = 0
     GLOBAL = 0
     player1Play()
+    game()
   })
 
-  roll.on('click', function () {
-    let result = Math.ceil(Math.random() * 6)
-    ROUND = ROUND + result
-    if (result === 1) {
-      dice.attr('src', 'assets/image/dice1.PNG')
-      ROUND = 0
-      turn()
-    } else if (result === 2) {
-      dice.attr('src', 'assets/image/dice2.PNG')
-    } else if (result === 3) {
-      dice.attr('src', 'assets/image/dice3.PNG')
-    } else if (result === 4) {
-      dice.attr('src', 'assets/image/dice4.PNG')
-    } else if (result === 5) {
-      dice.attr('src', 'assets/image/dice5.PNG')
-    } else if (result === 6) {
-      dice.attr('src', 'assets/image/dice6.PNG')
-    }
-    if (player === 1) {
-      round1.text(ROUND)
-    } else if (player === 2) {
-      round2.text(ROUND)
-    }
-  })
+  function game() {
+    roll.on('click', function () {
+      let result = Math.ceil(Math.random() * 6)
+      ROUND = ROUND + result
 
-  hold.on('click', function () {
-    GLOBAL = GLOBAL + ROUND
-    if (player === 1) {
-      global1.text(GLOBAL)
-    } else if (player === 2) {
-      global2.text(GLOBAL)
-    }
-    ROUND = 0
-    turn()
-  })
+      if (result === 1) {
+        dice.attr('src', 'assets/image/dice1.PNG')
+        ROUND = 0
+        turn()
+      } else if (result === 2) {
+        dice.attr('src', 'assets/image/dice2.PNG')
+      } else if (result === 3) {
+        dice.attr('src', 'assets/image/dice3.PNG')
+      } else if (result === 4) {
+        dice.attr('src', 'assets/image/dice4.PNG')
+      } else if (result === 5) {
+        dice.attr('src', 'assets/image/dice5.PNG')
+      } else if (result === 6) {
+        dice.attr('src', 'assets/image/dice6.PNG')
+      }
 
+      if (player === 1) {
+        round1.text(ROUND)
+      } else if (player === 2) {
+        round2.text(ROUND)
+      }
+    })
+
+    hold.on('click', function () {
+      GLOBAL = GLOBAL + ROUND
+
+      if (player === 1) {
+        global1.text(GLOBAL)
+      } else if (player === 2) {
+        global2.text(GLOBAL)
+      }
+
+      if (GLOBAL >= 100) {
+        roll.off('click')
+        hold.off('click')
+        if (player === 1) {
+          alert('Player 1 WIN')
+          player = 0
+        } else if (player === 2) {
+          alert('Player 2 WIN')
+          player = 0
+        }
+      } else {
+        ROUND = 0
+        turn()
+      }
+    })
+  }
 });
 
