@@ -4,11 +4,7 @@ body {
 
 .player {
   font-size: 3em;
-  padding-top: 20%;
-}
-
-#new-game {
-  font-size: 2em;
+  margin-top: 20%;
 }
 
 .score {
@@ -17,36 +13,91 @@ body {
 
 .round {
   margin-top: 25%;
-  width: 20%;
+  width: 150px;
+  height: auto;
 }
 
 #ROUND1,
-#ROUND2 {
+#ROUND2,
+#new-game,
+#div-roll,
+#div-hold {
   font-size: 2em;
 }
 
 #dice {
-  margin-top: 16%;
-  width: 5%;
-  height: 10%;
-  margin-left: 47%;
-}
-
-.area {
-  width: 100%;
-  margin-left: 0%;
-  height: 100vw;
+  margin-top: 20%;
+  width: 150px;
+  height: 150px;
 }
 
 #div-roll {
-  font-size: 2em;
-  margin-top: 34%;
-  width: 100%;
+  margin-top: 25%;
 }
 
-#div-hold {
-  font-size: 2em;
-  margin-top: 36.5%;
-  width: 100%;
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .player {
+    font-size: 2em;
+    margin-top: 20%;
+  }
 
+  .score {
+    font-size: 4em;
+  }
+
+  .round {
+    margin-top: 25%;
+    width: 100px;
+    height: auto;
+  }
+
+  #ROUND1,
+  #ROUND2,
+  #new-game,
+  #div-roll,
+  #div-hold {
+    font-size: 1.5em;
+  }
+
+  #dice {
+    margin-top: 20%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player {
+    font-size: 1em;
+    margin-top: 20%;
+  }
+
+  .score {
+    font-size: 2em;
+  }
+
+  .round {
+    font-size: 0.8em;
+    margin-top: 25%;
+    width: 100px;
+    height: auto;
+  }
+
+  #ROUND1,
+  #ROUND2,
+  #new-game,
+  #div-roll,
+  #div-hold {
+    font-size: 1em;
+  }
+
+  #dice {
+    margin-top: 10%;
+    width: 50px;
+    height: 50px;
+  }
+
+  #div-roll {
+    margin-top: 25%;
+  }
 }
